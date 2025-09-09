@@ -62,6 +62,7 @@ export const useGameStore = defineStore('game', {
     currentRoundPoints: 0,
     revealedAnswers: [] as number[],
     showAwardModal: false,
+  showEndScreen: false,
   games: normalizedGamesData,
   }),
 
@@ -102,6 +103,7 @@ export const useGameStore = defineStore('game', {
       this.selectedGameIndex = null
       this.team1Score = 0
       this.team2Score = 0
+  this.showEndScreen = false
     },
   revealAnswer(index: number) {
       if (this.revealedAnswers.includes(index)) return false
@@ -151,6 +153,12 @@ export const useGameStore = defineStore('game', {
       this.team2Score = 0
       this.resetRound()
       // لا نغير اختيار اللعبة
+    },
+
+    endGame() {
+      // إظهار شاشة النهاية مع النتائج
+      this.showAwardModal = false
+      this.showEndScreen = true
     },
 
   updateTeamNames(team1Name?: string, team2Name?: string) {

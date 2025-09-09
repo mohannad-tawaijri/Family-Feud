@@ -105,6 +105,12 @@
       >
         بداية جديدة
       </button>
+      <button 
+        @click="endNow"
+        class="game-button px-6 py-3 text-xl font-bold"
+      >
+        إنهاء اللعبة
+      </button>
     </div>
 
     <!-- Team Scores -->
@@ -225,5 +231,9 @@ function addStrike() {
   // تشغيل صوت السترايك
   try { playStrike() } catch {}
   console.log('Strike added. Total strikes:', strikes.value)
+}
+
+function endNow() {
+  gameStore.endGame()
 }
 </script>

@@ -2,6 +2,7 @@
 import { storeToRefs } from 'pinia'
 import { useGameStore } from './stores/game'
 import GameBoard from './components/GameBoard.vue'
+import EndScreen from './components/EndScreen.vue'
 import GameMenu from './components/GameMenu.vue'
 
 const game = useGameStore()
@@ -18,7 +19,8 @@ function backToMenu() {
       <div class="p-4" style="text-align:center;">
         <button class="game-button px-4 py-2" @click="backToMenu">رجوع إلى القائمة</button>
       </div>
-      <GameBoard />
+  <GameBoard />
+  <EndScreen v-if="game.showEndScreen" />
     </template>
     <template v-else>
       <GameMenu />
