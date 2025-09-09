@@ -1,0 +1,24 @@
+# General
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+*.swp
+
+# Node / Vite
+node_modules/
+dist/
+.cache/
+
+# Env
+.env
+.env.*
+
+# Editors
+.vscode/
+.idea/
+
+# Nested project ignores
+**/node_modules/
+**/dist/
+**/*.log

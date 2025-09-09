@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: family-feud-game
+    env: docker
+    plan: free
+    autoDeploy: true
+    healthCheckPath: /
+    previews:
+      generation: automatic
+    envVars:
+      - key: NODE_ENV
+        value: production
+    scaling:
+      minInstances: 1
+      maxInstances: 1
